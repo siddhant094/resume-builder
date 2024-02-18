@@ -14,7 +14,7 @@ function removeTagsFromString(htmlString: string) {
   htmlString = htmlString.replace(/<ul\b[^>]*>(.*?)<\/ul>/gi, '$1');
   htmlString = htmlString.replace(/^<li>/, '');
   htmlString = htmlString.replace(/<\/li>$/, '');
-  let dataArray = htmlString.split('</li><li>');
+  const dataArray = htmlString.split('</li><li>');
   return dataArray;
 }
 
@@ -90,7 +90,7 @@ export class DocumentCreator {
                 );
                 arr.push(this.createRoleText(`${position.position}`));
 
-                let sortedtext = removeTagsFromString(position.summary);
+                const sortedtext = removeTagsFromString(position.summary);
                 sortedtext.forEach((bulletPoint) => {
                   arr.push(this.createBullet(bulletPoint));
                 });
