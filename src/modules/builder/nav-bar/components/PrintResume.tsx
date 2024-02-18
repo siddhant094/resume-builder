@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 import { StyledButton } from '../atoms';
 
 export const PrintResume = () => {
